@@ -1,0 +1,122 @@
+[
+    {
+        "name": "John Doe",
+        "position": "Software Engineer",
+        "linkedin": "https://www.linkedin.com/in/johndoe/",
+        "level": "Senior"
+    },
+    {
+        "name": "Jane Smith",
+        "position": "Data Scientist",
+        "linkedin": "https://www.linkedin.com/in/janesmith/",
+        "level": "Senior"
+    },
+    {
+        "name": "Michael Johnson",
+        "position": "Product Manager",
+        "linkedin": "https://www.linkedin.com/in/michaeljohnson/",
+        "level": "Senior"
+    },
+    {
+        "name": "Emily Davis",
+        "position": "UX Designer",
+        "linkedin": "https://www.linkedin.com/in/emilydavis/",
+        "level": "Senior"
+    },
+    {
+        "name": "Robert Wilson",
+        "position": "DevOps Engineer",
+        "linkedin": "https://www.linkedin.com/in/robertwilson/",
+        "level": "Senior"
+    },
+    {
+        "name": "Sarah Brown",
+        "position": "Data Analyst",
+        "linkedin": "https://www.linkedin.com/in/sarahbrown/",
+        "level": "Junior"
+    },
+    {
+        "name": "David Lee",
+        "position": "Frontend Developer",
+        "linkedin": "https://www.linkedin.com/in/davidlee/",
+        "level": "Junior"
+    },
+    {
+        "name": "Jessica Garcia",
+        "position": "Marketing Manager",
+        "linkedin": "https://www.linkedin.com/in/jessicagarcia/",
+        "level": "Junior"
+    },
+    {
+        "name": "William Hall",
+        "position": "Systems Administrator",
+        "linkedin": "https://www.linkedin.com/in/williamhall/",
+        "level": "Junior"
+    },
+    {
+        "name": "Olivia Clark",
+        "position": "Graphic Designer",
+        "linkedin": "https://www.linkedin.com/in/oliviaclark/",
+        "level": "Junior"
+    },
+    {
+        "name": "Daniel White",
+        "position": "QA Tester",
+        "linkedin": "https://www.linkedin.com/in/danielwhite/",
+        "level": "Entry"
+    },
+    {
+        "name": "Ava Lewis",
+        "position": "Content Writer",
+        "linkedin": "https://www.linkedin.com/in/avalewis/",
+        "level": "Entry"
+    },
+    {
+        "name": "James Moore",
+        "position": "HR Coordinator",
+        "linkedin": "https://www.linkedin.com/in/jamesmoore/",
+        "level": "Entry"
+    },
+    {
+        "name": "Sophia Baker",
+        "position": "Customer Support Specialist",
+        "linkedin": "https://www.linkedin.com/in/sophiabaker/",
+        "level": "Entry"
+    },
+    {
+        "name": "Liam Turner",
+        "position": "Sales Associate",
+        "linkedin": "https://www.linkedin.com/in/liamturner/",
+        "level": "Entry"
+    },
+    {
+        "name": "Charlotte Evans",
+        "position": "UI Designer",
+        "linkedin": "https://www.linkedin.com/in/charlotteevans/",
+        "level": "Intern"
+    },
+    {
+        "name": "Mason Murphy",
+        "position": "Junior Developer",
+        "linkedin": "https://www.linkedin.com/in/masonmurphy/",
+        "level": "Intern"
+    },
+    {
+        "name": "Amelia Harris",
+        "position": "Marketing Intern",
+        "linkedin": "https://www.linkedin.com/in/ameliaharris/",
+        "level": "Intern"
+    },
+    {
+        "name": "Ethan King",
+        "position": "IT Intern",
+        "linkedin": "https://www.linkedin.com/in/ethanking/",
+        "level": "Intern"
+    },
+    {
+        "name": "Abigail Turner",
+        "position": "Design Intern",
+        "linkedin": "https://www.linkedin.com/in/abigailturner/",
+        "level": "Intern"
+    }
+]
