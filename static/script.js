@@ -8,16 +8,46 @@ window.onload = () => {
         }
     }
 
+    const dataSanitizer = (text) => {
+        return (
+            text
+            .toLowerCase()
+            .replaceAll(" ", "")
+            .replaceAll(",", "")
+        )
+    }
+
+    const searchItem = (searchBoxVal) => {
+        const data = JSON.parse(sessionStorage.getItem('data'))
+        let foundItems = []
+        Object.values(data).forEach((item) => {
+            let row = dataSanitizer(Object.values(item).join())
+            let lkupTerm = dataSanitizer(searchBoxVal)
+            if(row.search(lkupTerm) > 0){
+                foundItems.push(item)
+            }
+        })
+        if(foundItems.length === 0){
+            return data
+        }
+        return foundItems
+    }
+
     const gatherDataBasedOnSubject = (subject, data) => {
         let table = document.createElement('table')
         let tr = document.createElement('tr')
 
+        if(data.length === 0) {
+            return null
+        }
         Object.keys(data[0]).forEach((item, _) => {
             let headerItem = document.createElement('th')
             headerItem.textContent = item.toUpperCase()
             tr.appendChild(headerItem)
         })
+
         table.appendChild(tr)
+
         switch(subject) {
             case "devs":
                 data.forEach((item) => {
@@ -57,21 +87,32 @@ window.onload = () => {
         fetch(`./data/${choice}.json`)
             .then(res => res.json())
             .then(data => {
+                fullListOfData(choice, data)
                 sessionStorage.setItem('data', JSON.stringify(data))
-                const tableOfContents = gatherDataBasedOnSubject(choice, data)
-                document.querySelector(RESULT_DIV).appendChild(tableOfContents)
+                document.querySelector('input#search').style.display = "block"
             })
             .catch(() => {
                 [renderNotFound, message404].forEach((renderError) => {
                     document.querySelector(RESULT_DIV).appendChild(renderError())
                 })
+                document.querySelector('input#search').style.display = "none"
             })
+    }
+
+    const fullListOfData = (choice, data) => {
+        performCleanUp()
+        const tableOfContents = gatherDataBasedOnSubject(choice, data)
+        if (tableOfContents !== null) {
+            document.querySelector(RESULT_DIV).appendChild(tableOfContents)
+        }
     }
 
     document.querySelector('select#first-step').addEventListener('change', (e) => {
         listRequestedData(e.target.value)
     })
     document.querySelector('input#search').addEventListener('keyup', (e) => {
-        searchItem(e.target.value)
+        let lkupValue = e.target.value
+        let data = searchItem(lkupValue)
+        fullListOfData("devs", data)
     })
 }
