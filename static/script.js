@@ -62,10 +62,9 @@ window.onload = () => {
                 document.querySelector(RESULT_DIV).appendChild(tableOfContents)
             })
             .catch(() => {
-                const missingItem = renderNotFound()
-                const missingMessage = message404()
-                document.querySelector(RESULT_DIV).appendChild(missingMessage)
-                document.querySelector(RESULT_DIV).appendChild(missingItem)
+                [renderNotFound, message404].forEach((renderError) => {
+                    document.querySelector(RESULT_DIV).appendChild(renderError())
+                })
             })
     }
 
