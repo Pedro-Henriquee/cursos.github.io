@@ -1,6 +1,11 @@
 window.onload = () => {
-    const cleanUp = () => {
-        document.querySelectorAll("#not-found").forEach((item) => item.remove())
+    const RESULT_DIV = "div#result"
+
+    const performCleanUp = () => {
+        let children = document.querySelector(RESULT_DIV)
+        while (children.firstChild) {
+            children.removeChild(children.firstChild)
+        }
     }
 
     const gatherDataBasedOnSubject = (subject, data) => {
@@ -48,20 +53,19 @@ window.onload = () => {
     }
 
     const listRequestedData = (choice) => {
-        const LAST_CHILD_BEFORE_DATA = "input#search"
+        performCleanUp()
         fetch(`./data/${choice}.json`)
             .then(res => res.json())
             .then(data => {
                 sessionStorage.setItem('data', JSON.stringify(data))
                 const tableOfContents = gatherDataBasedOnSubject(choice, data)
-                document.querySelector(LAST_CHILD_BEFORE_DATA).after(tableOfContents)
-                cleanUp()
+                document.querySelector(RESULT_DIV).appendChild(tableOfContents)
             })
             .catch(() => {
                 const missingItem = renderNotFound()
                 const missingMessage = message404()
-                document.querySelector(LAST_CHILD_BEFORE_DATA).after(missingMessage)
-                document.querySelector(LAST_CHILD_BEFORE_DATA).after(missingItem)
+                document.querySelector(RESULT_DIV).appendChild(missingMessage)
+                document.querySelector(RESULT_DIV).appendChild(missingItem)
             })
     }
 
