@@ -1,3 +1,11 @@
 input#search {
     display: none;
 }
+
+.search-menu {
+    text-align: center;
+}
+
+#result {
+    text-align: center;
+}

@@ -23,7 +23,7 @@ window.onload = () => {
         Object.values(data).forEach((item) => {
             let row = dataSanitizer(Object.values(item).join())
             let lkupTerm = dataSanitizer(searchBoxVal)
-            if(row.search(lkupTerm) > 0){
+            if(row.search(lkupTerm) >= 0){
                 foundItems.push(item)
             }
         })
@@ -68,7 +68,7 @@ window.onload = () => {
     const message404 = () => {
         let h2 = document.createElement('h2')
         h2.id = "not-found"
-        h2.textContent = "Oops, parece que não temos esse dado ainda :("
+        h2.textContent = "Oops, parece que não temos esse dado ainda!"
         return h2
     }
 
@@ -76,8 +76,7 @@ window.onload = () => {
         let iFrame = document.createElement('iframe')
         iFrame.src = "https://giphy.com/embed/l2JhORT5IFnj6ioko"
         iFrame.id = "not-found"
-        iFrame.width = "480"
-        iFrame.height = "198"
+        iFrame.width = "80%"
         iFrame.className = "giphy-embed"
         return iFrame
     }
